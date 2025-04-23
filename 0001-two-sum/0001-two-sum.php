@@ -5,19 +5,15 @@ class Solution {
      * @param Integer $target
      * @return Integer[]
      */
-    function twoSum($nums, $target) {
-          $map = [];
-    
-        foreach ($nums as $index => $num) {
-            $complement = $target - $num;
-            
-            if (isset($map[$complement])) {
-                return [$map[$complement], $index];
+    function twoSum(array $nums, int $target): array 
+    {
+        for ($i = 0; $i < count($nums); $i++) {
+            $firstNumber = $nums[$i];
+            $secondNumber = $target - $firstNumber;
+            if (($index = array_search($secondNumber, $nums)) !== null && $index !== $i) {
+                return [$i, $index];
             }
-            
-            $map[$num] = $index;
         }
-        
         return [];
     }
 }
