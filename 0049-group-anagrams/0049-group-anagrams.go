@@ -1,16 +1,14 @@
-import (
-    "sort"
-    "strings"
-)
-
 func groupAnagrams(strs []string) [][]string {
     resultMap := make(map[string][]string)
 
     for _, str := range strs {
-        chars := strings.Split(str, "")
-        sort.Strings(chars)
-        joinChar := strings.Join(chars, "")
-        resultMap[joinChar] = append(resultMap[joinChar], str)
+        count := make([]int, 26)
+        for _, ch := range str {
+            count[ch - 'a']++
+        }
+
+        key := strings.Trim(strings.Replace(fmt.Sprint(count), " ", "#", -1), "[]")
+        resultMap[key] = append(resultMap[key], str)
     }
 
     result := make([][]string, 0, len(resultMap))
