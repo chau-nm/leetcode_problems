@@ -5,20 +5,16 @@ func topKFrequent(nums []int, k int) []int {
         numMap[num]++
     }
 
-    slice := [][]int{}
-
+    buckets := make([][]int, len(nums) + 1)
     for k, v := range numMap {
-        slice = append(slice, []int{k, v})
+        buckets[v] = append(buckets[v], k)
     }
-
-    sort.Slice(slice, func(i, j int) bool {
-        return slice[i][1] > slice[j][1]
-    })
 
     result := []int{}
-    for i:=0; i < k; i++ {
-        result = append(result, slice[i][0])
+    for i := len(buckets) - 1; i >= 0 && len(result) < k; i-- {
+        if len(buckets[i]) > 0 {
+            result = append(result, buckets[i]...)
+        }
     }
-
-    return result
+    return result[:k]
 }
