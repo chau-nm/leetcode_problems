@@ -8,10 +8,8 @@ func numberOfBeams(bank []string) int {
                 currentLaserNumber++
             }
         }
-        if preLaserNumber > 0 && currentLaserNumber > 0 {
-            count += preLaserNumber * currentLaserNumber 
-        }
         if currentLaserNumber > 0 {
+            count += preLaserNumber * currentLaserNumber 
             preLaserNumber = currentLaserNumber
         }
     }
