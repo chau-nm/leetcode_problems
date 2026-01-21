@@ -5,12 +5,11 @@ class Solution {
      * @return Integer
      */
     function lengthOfLongestSubstring($s) {
-        $map = [];
-        $left = 0;
-        $maxLength = 0;
+        $map = []; $maxLength = 0; $left = 0;
 
         for ($right = 0; $right < strlen($s); $right++) {
             $char = $s[$right];
+
             if (isset($map[$char]) && $map[$char] >= $left) {
                 $left = $map[$char] + 1;
             }
