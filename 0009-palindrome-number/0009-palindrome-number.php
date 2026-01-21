@@ -5,6 +5,7 @@ class Solution {
      * @return Boolean
      */
     function isPalindrome($x) {
-        return strrev($x) == $x;
+        $numString = (string) $x;
+        return strrev($numString) == $numString;
     }
 }
