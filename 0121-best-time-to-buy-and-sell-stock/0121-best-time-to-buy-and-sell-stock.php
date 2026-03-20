@@ -5,10 +5,11 @@ class Solution {
      * @return Integer
      */
     function maxProfit($prices) {
+        $len = count($prices);
         $left = 0;
         $max = 0;
 
-        for ($right = 0; $right < count($prices); $right++) {
+        for ($right = 0; $right < $len; $right++) {
             if ($prices[$right] < $prices[$left]) {
                 $left = $right;
             } else {
