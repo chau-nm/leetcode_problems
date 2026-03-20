@@ -6,14 +6,14 @@ class Solution {
      */
     function maxProfit($prices) {
         $len = count($prices);
-        $left = 0;
+        $min = $prices[0];
         $max = 0;
 
-        for ($right = 0; $right < $len; $right++) {
-            if ($prices[$right] < $prices[$left]) {
-                $left = $right;
+        foreach ($prices as $price) {
+            if ($price < $min) {
+                $min = $price;
             } else {
-                $max = max($prices[$right] - $prices[$left], $max);
+                $max = max($price - $min, $max);
             }
         }
 
