@@ -5,18 +5,14 @@ class Solution {
      * @return Integer
      */
     function maxProfit($prices) {
-        $len = count($prices);
-        $min = $prices[0];
-        $max = 0;
+        $minPrice = PHP_INT_MAX;
+        $maxProfit = 0;
 
         foreach ($prices as $price) {
-            if ($price < $min) {
-                $min = $price;
-            } else {
-                $max = max($price - $min, $max);
-            }
+            $minPrice = min($minPrice, $price);
+            $maxProfit = max($maxProfit, $price - $minPrice);
         }
 
-        return $max;
+        return $maxProfit;
     }
 }
