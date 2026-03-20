@@ -11,8 +11,9 @@ class Solution {
         for ($right = 0; $right < count($prices); $right++) {
             if ($prices[$right] < $prices[$left]) {
                 $left = $right;
+            } else {
+                $max = max($prices[$right] - $prices[$left], $max);
             }
-            $max = max($prices[$right] - $prices[$left], $max);
         }
 
         return $max;
