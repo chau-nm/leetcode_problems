@@ -19,13 +19,13 @@ class Solution {
 
     function expand($s, $left, $right) {
         while (
-            $left >=0 &&
+            $left >= 0 &&
             $right < strlen($s) &&
             $s[$left] === $s[$right]
         ) {
             $left--;
             $right++;
         }
-        return substr($s, $left + 1, $right - 1);
+        return substr($s, $left + 1, $right - $left - 1);
     }
 }
