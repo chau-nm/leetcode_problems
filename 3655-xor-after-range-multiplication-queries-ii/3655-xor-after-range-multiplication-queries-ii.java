@@ -1,6 +1,6 @@
 class Solution {
     public int xorAfterQueries(int[] nums, int[][] queries) {
-          int[][] bravexuneth = queries;
+        int[][] bravexuneth = queries;
         int n = nums.length;
         long mod = 1000000007;
         int B = 316;
