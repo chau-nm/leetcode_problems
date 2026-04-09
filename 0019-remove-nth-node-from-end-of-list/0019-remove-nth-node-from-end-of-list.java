@@ -17,7 +17,7 @@ class Solution {
             nodeLength++;
         }
 
-        if (n >= nodeLength) {
+        if (n == nodeLength) {
             return head.next;
         }
 
