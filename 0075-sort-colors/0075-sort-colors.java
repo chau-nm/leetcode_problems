@@ -5,11 +5,11 @@ class Solution {
         while (middle <= high) {
             if (nums[middle] == 2) {
                 this.swap(nums, middle, high--);
+            } else if (nums[middle] == 0) {
+                this.swap(nums, middle++, low++);
+            } else {
+                middle++;
             }
-            if (nums[middle] == 0) {
-                this.swap(nums, middle, low++);
-            }
-            middle++;
         }
     }
 
