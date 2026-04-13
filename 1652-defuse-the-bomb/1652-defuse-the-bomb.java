@@ -18,7 +18,7 @@ class Solution {
             }
             if (k < 0) {
                 if (previousSum > 0) {
-                    sum = previousSum - code[(i - k + n - 1) % n] + code[(i - 1 + n) % n];
+                    sum = previousSum - code[(i + k + n - 1) % n] + code[(i - 1 + n) % n];
                 } else {
                     for (int j = 1; j <= -k; j++) {
                         sum += code[(i - j + n) % n];
