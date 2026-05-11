@@ -5,7 +5,7 @@ class Solution {
         for (int i = 0; i < nums.length; i++) {
             String numString = String.valueOf(nums[i]);
             for (int j = 0; j < numString.length(); j++) {
-                result.add(Integer.parseInt(String.valueOf(numString.charAt(j))));
+                result.add(numString.charAt(j) - '0');
             }
         }
 
